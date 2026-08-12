@@ -14,5 +14,10 @@ PS C:\Users\USERNAME> Invoke-RestMethod -Method PUT -Uri "http://localhost:8080/
 4.REPLACE NAME ONLY:
 PS C:\Users\USERNAME> Invoke-RestMethod -Method PATCH -Uri "http://localhost:8080/PATCH?i=1&name=IBRAHIM"
 
-5.GET STUDENT BY INDEX NUMBER:
-http://localhost:8080/students/0
+5.GET STUDENT BY INDEX NUMBER/NAME/ID:
+
+-> http://localhost:8080/students/0
+
+-> PS C:\Users\USERNAME> Invoke-RestMethod -Method GET -Uri "http://localhost:8080/student/id?id=100"
+
+->  PS C:\Users\USERNAME> Invoke-RestMethod -Method GET -Uri "http://localhost:8080/student/name?name=ibrahim"

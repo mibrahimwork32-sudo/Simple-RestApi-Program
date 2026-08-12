@@ -39,7 +39,30 @@ public class student {
         student[i] = id + " : " + name;
         return "student name updated updated";
     }
+    @GetMapping("/student/name/")
+    public String searchByName(@RequestParam String name) {
 
+        for (int i = 0; i < student.length; i++) {
+
+            if (student[i] != null && student[i].contains(": " + name)) {
+                return student[i];
+            }
+        }
+
+        return "student not found";
+    }
+    @GetMapping("/student/id/")
+    public String searchById(@RequestParam int id) {
+
+        for (int i = 0; i < student.length; i++) {
+
+            if (student[i] != null && student[i].startsWith(id + " :")) {
+                return student[i];
+            }
+        }
+
+        return "student not found";
+    }
     @GetMapping("/students/{index}")
     public String getStudent(@PathVariable int index) {
         if (index < 0 || index >= student.length) {
