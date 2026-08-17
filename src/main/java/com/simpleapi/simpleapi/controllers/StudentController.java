@@ -1,14 +1,15 @@
 package com.simpleapi.simpleapi.controllers;
 
-import com.simpleapi.simpleapi.services.studentService;
+import com.simpleapi.simpleapi.services.studentservice;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-public class studentController {
+@Controller
+public class studentcontroller {
 
-    private final studentService studentService;
+    private final studentservice studentService;
 
-    public studentController(studentService studentService) {
+    public studentcontroller(studentservice studentService) {
         this.studentService = studentService;
     }
 
